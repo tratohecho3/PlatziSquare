@@ -11,3 +11,20 @@
 </h2>
 <input type="text" placeholder="Tu nombre" [(ngModel)]="nombre">
 <h3>mi nombre es {{nombre}}</h3>
+<ul>
+  <ng-container *ngFor="let lugar of lugares">
+  <li *ngIf="lugar.active" >{{lugar.nombre}}</li>
+  </ng-container>
+</ul>
+<ul>
+  <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania">
+  <li [ngStyle]="{color: (lugar.active) ? 'black' : 'blue'}" [ngClass]="{numero_par: (i+1) % 2 !== 0}" >{{lugar.nombre}}
+    <span *ngSwitchCase="1" [ngStyle]="{color: 'green'}">Muy cercano</span>
+    <span *ngSwitchCase="2" [ngStyle]="{color: 'black'}">Cercano</span>
+    <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}">Lejos</span>
+  </li>
+  </ng-container>
+</ul>
+<agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
