@@ -9,11 +9,13 @@ import { ContarClicksDirective } from './contar-clicks.directive';
 import {Routes,RouterModule} from '@angular/router';
 import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 const appRoutes: Routes = [
   {path:'',component:LugaresComponent},
   {path:'lugares',component:LugaresComponent},
-  {path:'detalle/:id',component:DetalleComponent}
+  {path:'detalle/:id',component:DetalleComponent},
+  {path:'contacto',component:ContactoComponent}
 
 ]
 
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     ResaltarDirective,
     ContarClicksDirective,
     DetalleComponent,
-    LugaresComponent
+    LugaresComponent,
+    ContactoComponent
     
   
   ],
