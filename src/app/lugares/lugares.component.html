@@ -4,6 +4,7 @@
       
       <ul>
         <h2>Lugares Cercanos</h2>
+        <button type="button" class="btn btn-success" routerLink="/crear" id="boton">Crear Nuevo Negocio</button>
         <ng-container *ngFor="let lugar of lugares" class="list-group">
           <a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action:'view',referer:'google'}"><li class="list-group-item">{{lugar.nombre}}</li></a>
         </ng-container>
