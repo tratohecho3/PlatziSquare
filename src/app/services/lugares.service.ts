@@ -10,13 +10,21 @@ export class LugaresService {
   public getLugares(){
     return this.afDB.list('lugares/');
   }
+  public getLugar(id){
+    return this.afDB.object('lugares/' + id);
+  }
   /*public buscar_Lugar(id){
     return this.lugares.filter((lugar)=>lugar.id == id)[0] || null;
 
   }*/
 
   public guardarLugar(lugar){
-    console.log(lugar); 
+    this.afDB.database.ref('lugares/' + lugar.id).set(lugar);
+
+
+  }
+
+  public editarLugar(lugar){
     this.afDB.database.ref('lugares/' + lugar.id).set(lugar);
 
 
