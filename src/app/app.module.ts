@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { CrearComponent } from './crear/crear.component';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   {path:'',component:LugaresComponent},
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
+    HttpModule,
     BrowserModule,
     FormsModule,
     AngularFirestoreModule,
