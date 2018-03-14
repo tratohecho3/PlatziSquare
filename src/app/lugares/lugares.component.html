@@ -6,12 +6,22 @@
         <h2>Lugares Cercanos</h2>
         <button type="button" class="btn btn-success" routerLink="/crear/new" id="boton">Crear Nuevo Negocio</button>
         <ng-container *ngFor="let lugar of lugares" class="list-group">
-          <a routerLink="/crear/{{lugar.id}}"><li class="list-group-item">{{lugar.nombre}}</li></a>
+            <li class="list-group-item">
+                <a routerLink="/crear/{{lugar.id}}"><h3>{{lugar.nombre}}</h3></a>
+                <br />
+                Creado: {{lugar.id | date:'mediumTime' | uppercase}}
+                <p [innerHtml]="lugar.descripcion | linkifystr"></p>
+            </li>
         </ng-container>
       </ul>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" [@contenedorAnimable]="state">
       <h2>Destacados</h2>
+      <ng-container *ngFor="let lugar of lugares" class="list-group">
+          <div class="alert alert-success" role="alert" *ngIf="lugar.plan == 'pagado'">
+              <a routerLink="/crear/{{lugar.id}}"><h3>{{lugar.nombre}}</h3></a>
+            </div>
+      </ng-container>
     </div>
   </div>
 </div>  

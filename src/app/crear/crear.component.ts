@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
 import { ActivatedRoute } from '@angular/router';
 
+//import swal from 'sweetalert2';
+const swal = require('sweetalert2');
 @Component({
   selector: 'app-crear',
   templateUrl: './crear.component.html',
@@ -34,17 +36,26 @@ export class CrearComponent implements OnInit {
 
         if(this.id != 'new'){
           this.lugaresService.editarLugar(this.lugar);
-          alert("Negocio editado con exito");
+          swal(
+            'Negocio editado con exito!',
+            'Sigue disfrutando la pagina!',
+            'success'
+          )
+          
         }
         else {
           this.lugar.id = Date.now();
           this.lugaresService.guardarLugar(this.lugar);
-          alert("Negocio guardado con exito");
+          swal(
+            'Negocio guardado con exito!',
+            'Sigue disfrutando la pagina!',
+            'success'
+          )
         }
 
         this.lugar = {};
 
-      })
+      });
 
   }
 

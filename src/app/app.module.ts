@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AgmCoreModule } from '@agm/core';
 import { ResaltarDirective } from './resaltar.directive';
@@ -18,6 +19,7 @@ import { CrearComponent } from './crear/crear.component';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpModule } from '@angular/http';
+import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 
 const appRoutes: Routes = [
   {path:'',component:LugaresComponent},
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     DetalleComponent,
     LugaresComponent,
     ContactoComponent,
-    CrearComponent
+    CrearComponent,
+    LinkifystrPipe
     
   
   ],
@@ -45,6 +48,7 @@ const appRoutes: Routes = [
     HttpModule,
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule ,
     AgmCoreModule.forRoot({

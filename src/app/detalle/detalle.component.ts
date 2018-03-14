@@ -18,7 +18,7 @@ export class DetalleComponent implements OnInit {
     console.log(this.route.snapshot.queryParams['action']);
     console.log(this.route.snapshot.queryParams['referer']);
     this.id = this.route.snapshot.params['id'];
-    this.lugar = lugaresService.buscar_Lugar(this.id);
+    //this.lugar = lugaresService.buscar_Lugar(this.id);
   }
 
 
