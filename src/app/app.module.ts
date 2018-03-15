@@ -24,13 +24,14 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AutorizacionService } from './services/autorizacion.service';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import { MyGuardService } from './services/my-guard.service';
 
 const appRoutes: Routes = [
   {path:'',component:LugaresComponent},
   {path:'lugares',component:LugaresComponent},
   {path:'detalle/:id',component:DetalleComponent},
   {path:'contacto',component:ContactoComponent},
-  {path:'crear/:id',component:CrearComponent},
+  {path:'crear/:id',component:CrearComponent, canActivate:[MyGuardService]},
   {path:'login',component:LoginComponent},
   {path:'registro',component:RegistroComponent }
 
@@ -65,7 +66,7 @@ const appRoutes: Routes = [
     }),
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [LugaresService,AutorizacionService],
+  providers: [LugaresService,AutorizacionService, MyGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

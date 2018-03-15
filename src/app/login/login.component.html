@@ -5,14 +5,15 @@
       <form>
         <div class="form-group">
           <h4><label for="exampleInputEmail1">Email</label></h4>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu Email">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu Email"  [(ngModel)]="registro.email" name="email">
           <small id="emailHelp" class="form-text">Nunca compartiremos tu informacion personal</small>
         </div>
         <div class="form-group">
           <h4><label for="exampleInputPassword1">Password</label></h4>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  [(ngModel)]="registro.password" name="password">
         </div>  
-        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesion</button>
+        <button type="submit" class="btn btn-success btn-block" (click)="login()">Iniciar Sesion</button>
+        <button type="submit" class="btn btn-primary btn-block" (click)="facebookLogin()">Iniciar Sesion con Facebook</button> 
         <button type="button" class="btn btn-secondary btn-block">Cancelar</button>
       </form>
     </div>
