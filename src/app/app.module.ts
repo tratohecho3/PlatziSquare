@@ -20,13 +20,19 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HttpModule } from '@angular/http';
 import { LinkifystrPipe } from './pipes/linkifystr.pipe';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
+import { AutorizacionService } from './services/autorizacion.service';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 
 const appRoutes: Routes = [
   {path:'',component:LugaresComponent},
   {path:'lugares',component:LugaresComponent},
   {path:'detalle/:id',component:DetalleComponent},
   {path:'contacto',component:ContactoComponent},
-  {path:'crear/:id',component:CrearComponent}
+  {path:'crear/:id',component:CrearComponent},
+  {path:'login',component:LoginComponent},
+  {path:'registro',component:RegistroComponent }
 
 ];
 
@@ -39,7 +45,9 @@ const appRoutes: Routes = [
     LugaresComponent,
     ContactoComponent,
     CrearComponent,
-    LinkifystrPipe
+    LinkifystrPipe,
+    LoginComponent,
+    RegistroComponent
     
   
   ],
@@ -47,6 +55,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpModule,
     BrowserModule,
+    AngularFireAuthModule,
     FormsModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,
@@ -56,7 +65,7 @@ const appRoutes: Routes = [
     }),
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [LugaresService],
+  providers: [LugaresService,AutorizacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

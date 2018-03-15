@@ -13,3 +13,7 @@ agm-map {
   height: 200px;
   background-color: red;
 }
+
+.menu {
+  margin: 0 5px 0 5px;
+}

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-4 card text-white bg-info mb-3" style="max-width: 22rem;">
+        <div class="card-header"><h3>Registrarse</h3></div>
+        <form>
+          <div class="form-group">
+            <h4><label for="exampleInputEmail1">Email</label></h4>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu Email" [(ngModel)]="registro.email" name="email">
+            <small id="emailHelp" class="form-text">Nunca compartiremos tu informacion personal</small>
+          </div>
+          <div class="form-group">
+            <h4><label for="exampleInputPassword1">Password</label></h4>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="registro.password" name="password">
+          </div>  
+          <button type="submit" class="btn btn-primary btn-block" (click)="registrar()">Registrarse</button>
+          <button type="button" class="btn btn-secondary btn-block">Cancelar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  

@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Http, Headers } from '@angular/http';
 
-import swal from 'sweetalert2';
-const swal = require('sweetalert2');
 @Injectable()
 export class LugaresService {
   API_ENDPOINT = 'https://platzisquare-410ad.firebaseio.com';
