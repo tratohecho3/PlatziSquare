@@ -6,7 +6,7 @@ import { animate } from '@angular/animations';
   selector: 'app-lugares',
   templateUrl: './lugares.component.html',
   styleUrls: ['./lugares.component.css'],
-  animations: [
+  /*animations: [
     trigger('contenedorAnimable', [
       state('inicial',
         style({opacity:0})),
@@ -14,7 +14,7 @@ import { animate } from '@angular/animations';
         style({opacity:1})),
       transition('inicial => final', animate(2000)),
       transition('final => inicial', animate(1000)),
-    ])]
+    ])]*/
 })
 export class LugaresComponent implements OnInit {
 

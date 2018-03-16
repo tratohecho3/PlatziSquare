@@ -10,11 +10,13 @@ import * as firebase from 'firebase/app';
 export class AppComponent {
 
   loggedIn = false;
+  user = null;
   constructor(private autorizacionService:AutorizacionService){
     autorizacionService.isLogged()
       .subscribe(result => {
         if(result && result.uid){
           this.loggedIn = true;
+          this.user = this.autorizacionService.getUser().currentUser.email;
         }
 
         else{

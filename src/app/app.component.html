@@ -17,7 +17,7 @@
 
       <button class="btn btn-outline-success menu" type="button" routerLink="/login" *ngIf="!loggedIn" >Login</button>
       <button class="btn btn-outline-success menu" type="button" routerLink="/registro" *ngIf="!loggedIn">Registro</button>
-      <button class="btn btn-outline-success menu" type="button" routerLink="/lugares" *ngIf="loggedIn" (click)="logout()">Cerrar Sesion {{email}}</button>
+      <button class="btn btn-outline-success menu" type="button" routerLink="/lugares" *ngIf="loggedIn" (click)="logout()">Cerrar Sesion {{user}}</button>
 
 
 
