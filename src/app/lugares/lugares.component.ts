@@ -31,7 +31,7 @@ export class LugaresComponent implements OnInit {
         this.lugares = lugares;
         this.state = 'final';
       })
-
+    console.log(lugares);
   }
 
   animacionInicia(e){
