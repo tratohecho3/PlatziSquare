@@ -3,8 +3,9 @@
     <div class="col-md-8">
       
       <ul>
-        <h2>Lugares Cercanos</h2>
-        <button type="button" class="btn btn-success" routerLink="/crear/new" id="boton">Crear Nuevo Negocio</button>
+        <h2>Places</h2>
+        <p>Login before create a new Place</p>
+        <button type="button" class="btn btn-success" routerLink="/crear/new" id="boton">Create a new business</button>
         <ng-container *ngFor="let lugar of lugares" class="list-group">
             <li class="list-group-item">
                 <a routerLink="/crear/{{lugar.id}}"><h3>{{lugar.nombre}}</h3></a>
@@ -15,14 +16,7 @@
         </ng-container>
       </ul>
     </div>
-    <div class="col-md-4" [@contenedorAnimable]="state">
-      <h2>Destacados</h2>
-      <ng-container *ngFor="let lugar of lugares" class="list-group">
-          <div class="alert alert-success" role="alert" *ngIf="lugar.plan == 'pagado'">
-              <a routerLink="/crear/{{lugar.id}}"><h3>{{lugar.nombre}}</h3></a>
-            </div>
-      </ng-container>
-    </div>
+
   </div>
 </div>  
 <agm-map [latitude]="lat" [longitude]="lng">

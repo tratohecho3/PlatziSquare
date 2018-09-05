@@ -1,6 +1,5 @@
-import { Component, OnInit, trigger, state, style, transition } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
-import { animate } from '@angular/animations';
 
 @Component({
   selector: 'app-lugares',
@@ -18,8 +17,8 @@ import { animate } from '@angular/animations';
 })
 export class LugaresComponent implements OnInit {
 
-  lat: number = 4.6;
-  lng: number = -74.0;
+  lat: number = 45.5;
+  lng: number = -73.6;
   lugares  = null;
   state = 'inicial';
 
@@ -31,7 +30,7 @@ export class LugaresComponent implements OnInit {
         this.lugares = lugares;
         this.state = 'final';
       })
-    console.log(lugares);
+    
   }
 
   animacionInicia(e){

@@ -45,37 +45,43 @@ export class CrearComponent implements OnInit {
 
 
   
-  guardarLugar(){
-    let direccion = this.lugar.calle + "," + this.lugar.ciudad + "," + this.lugar.pais;
-    this.lugaresService.obtenerGeoData(direccion)
-      .subscribe(result => {
-        
-        this.lugar.lat  = result.json().results[0].geometry.location.lat;
-        this.lugar.lng = result.json().results[0].geometry.location.lng;
-     
-
-        if(this.id != 'new'){
-          this.lugaresService.editarLugar(this.lugar);
-          /*swal(
-            'Negocio editado con exito!',
-            'Sigue disfrutando la pagina!',
-            'success'
-          )*/
+  guardarLugar(form){
+    if(form.valid) {
+      let direccion = this.lugar.calle + "," + this.lugar.ciudad + "," + this.lugar.pais;
+      this.lugaresService.obtenerGeoData(direccion)
+        .subscribe(result => {
           
-        }
-        else {
-          this.lugar.id = Date.now();
-          this.lugaresService.guardarLugar(this.lugar);
-          /*swal(
-            'Negocio guardado con exito!',
-            'Sigue disfrutando la pagina!',
-            'success'
-          )*/
-        }
+          this.lugar.lat  = result.json().results[0].geometry.location.lat;
+          this.lugar.lng = result.json().results[0].geometry.location.lng;
+       
+  
+          if(this.id != 'new'){
+            this.lugaresService.editarLugar(this.lugar);
+            /*swal(
+              'Negocio editado con exito!',
+              'Sigue disfrutando la pagina!',
+              'success'
+            )*/
+            
+          }
+          else {
+            this.lugar.id = Date.now();
+            this.lugaresService.guardarLugar(this.lugar);
+            /*swal(
+              'Negocio guardado con exito!',
+              'Sigue disfrutando la pagina!',
+              'success'
+            )*/
+          }
+  
+          this.lugar = {};
+  
+        });
+    }
+    else {
+      alert('Fill all the form')
+    }
 
-        this.lugar = {};
-
-      });
 
   }
 

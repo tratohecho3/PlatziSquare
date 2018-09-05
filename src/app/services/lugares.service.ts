@@ -19,6 +19,7 @@ export class LugaresService {
 
   public guardarLugar(lugar){
     this.afDB.database.ref('lugares/' + lugar.id).set(lugar);
+    alert('Business created, now you can go home and see it at the map')
     //const headers = new Headers({"Content-Type":"application/json"});
     //return this.http.post(this.API_ENDPOINT+ '/lugares.json', lugar,{headers:headers}).subscribe();
 
